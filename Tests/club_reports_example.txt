@@ -1,0 +1,190 @@
+
+##### MALADIE__ATCG_Edit_
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 97/100
+Analyzed 32.0 s
+Integrated loudness -6.8 LUFS  |  Peak -0.0 dBFS  |  Crest 8.1 dB  |  Dynamics 1.4 dB  |  Correlation 0.90
+
+1. [SATURATION - TIP] Digital clipping (4 events)
+   The waveform is flattened at 0 dBFS for several consecutive samples: hard, unwanted distortion.
+   1) Gain plug-in (Utility > Gain) in the first slot: Gain -1.0 dB (or turn down whatever is clipping upstream)
+   2) Last slot: Adaptive Limiter (or Limiter) with Out Ceiling -0.5 dB, Gain 0.0 dB; check with Loudness Meter
+
+
+##### ZINGA__IT__-_Rewind__V2_
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 97/100
+Analyzed 32.0 s
+Integrated loudness -7.3 LUFS  |  Peak -0.3 dBFS  |  Crest 8.2 dB  |  Dynamics 1.3 dB  |  Correlation 0.97
+
+1. [SATURATION - TIP] Hard clipping below 0 dBFS (2 events)
+   Flat-topped peaks at -0.3 dBFS: a clipper or saturator is clipping. Fine if intentional, but keep it to 1-2 dB of clipping on transients.
+   1) Lower the input of the clipper/saturator until it only shaves the loudest transients
+   2) Compare bypassed vs active at the same loudness: if the transients sound duller, back off
+
+
+##### Manu_Dibango__Bob_Sinclar_-_Soul_Makossa_Extended_Mix
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 86/100
+Analyzed 32.0 s
+Integrated loudness -5.0 LUFS  |  Peak 1.3 dBFS  |  Crest 8.5 dB  |  Dynamics 1.4 dB  |  Correlation 0.82
+
+1. [EQ - IMPORTANT] Muddy low mids around 250 Hz
+   The master is about 4.5 dB louder than a reference balance in this range (200 Hz - 250 Hz).
+   1) Channel EQ: use a Peak (bell) band at 250 Hz, Gain -3.0 dB, Q 1.4
+   2) Before cutting, boost the band +6 dB and sweep slowly around 250 Hz: where it sounds worst is where the cut goes
+
+2. [EQ - TIP] Missing sub around 40 Hz
+   The master is about 4.4 dB quieter than a reference balance in this range (40 Hz - 40 Hz).
+   1) Channel EQ: use a Peak (bell) band at 40 Hz, Gain +2.5 dB, Q 2.2
+   2) Less is more: if a small boost isn't enough, fix it at the source (sample/preset) instead of pushing the EQ
+
+3. [LOUDNESS - TIP] Overs above 0 dBFS
+   Peaks reach 1.3 dBFS. Club files usually sit at -0.3 to 0 dBFS; anything above can clip in the DJ's player or after conversion.
+   1) Last slot: Adaptive Limiter (or Limiter) with Out Ceiling -0.5 dB, Gain 0.0 dB; check with Loudness Meter
+   2) For the streaming version use a -1 dBTP ceiling instead
+
+
+##### Y_QUE_FUE_ATCG_Remix
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 94/100
+Analyzed 32.0 s
+Integrated loudness -5.6 LUFS  |  Peak 0.9 dBFS  |  Crest 8.5 dB  |  Dynamics 1.2 dB  |  Correlation 0.88
+
+1. [EQ - TIP] Missing sub around 40 Hz
+   The master is about 5.1 dB quieter than a reference balance in this range (40 Hz - 40 Hz).
+   1) Channel EQ: use a Peak (bell) band at 40 Hz, Gain +3.0 dB, Q 2.2
+   2) Less is more: if a small boost isn't enough, fix it at the source (sample/preset) instead of pushing the EQ
+
+2. [LOUDNESS - TIP] Overs above 0 dBFS
+   Peaks reach 0.9 dBFS. Club files usually sit at -0.3 to 0 dBFS; anything above can clip in the DJ's player or after conversion.
+   1) Last slot: Adaptive Limiter (or Limiter) with Out Ceiling -0.5 dB, Gain 0.0 dB; check with Loudness Meter
+   2) For the streaming version use a -1 dBTP ceiling instead
+
+
+##### ZINGA__IT__-_Paradise_Place__MASTERED_
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 89/100
+Analyzed 32.0 s
+Integrated loudness -7.1 LUFS  |  Peak 0.0 dBFS  |  Crest 8.2 dB  |  Dynamics 1.6 dB  |  Correlation 0.96
+
+1. [EQ - IMPORTANT] Thin, lacks warmth around 250 Hz
+   The master is about 4.6 dB quieter than a reference balance in this range (250 Hz - 250 Hz).
+   1) Channel EQ: use a Peak (bell) band at 250 Hz, Gain +3.0 dB, Q 2.2
+   2) Less is more: if a small boost isn't enough, fix it at the source (sample/preset) instead of pushing the EQ
+
+2. [STEREO - TIP] DC offset
+   The signal isn't centred on zero: it wastes headroom.
+   1) Channel EQ: enable the Low Cut (first band) at 20 Hz, slope 24 dB/Oct
+
+
+##### ATCG_-_Dawsha__Extended_Mix__
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 89/100
+Analyzed 32.0 s
+Integrated loudness -6.8 LUFS  |  Peak -0.3 dBFS  |  Crest 7.9 dB  |  Dynamics 1.7 dB  |  Correlation 0.82
+
+1. [EQ - IMPORTANT] Too much sub around 40 Hz
+   The master is about 7.0 dB louder than a reference balance in this range (40 Hz - 40 Hz).
+   1) Channel EQ: Low Shelf at 48 Hz, Gain -5.0 dB
+   2) Before cutting, boost the band +6 dB and sweep slowly around 40 Hz: where it sounds worst is where the cut goes
+
+2. [EQ - TIP] Muddy low mids around 250 Hz
+   The master is about 4.3 dB louder than a reference balance in this range (200 Hz - 250 Hz).
+   1) Channel EQ: use a Peak (bell) band at 250 Hz, Gain -3.0 dB, Q 1.4
+   2) Before cutting, boost the band +6 dB and sweep slowly around 250 Hz: where it sounds worst is where the cut goes
+
+
+##### Depeche_Mode_-_Personal_Jesus__ATCG_Remix__1
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 97/100
+Analyzed 32.0 s
+Integrated loudness -6.1 LUFS  |  Peak -0.5 dBFS  |  Crest 6.1 dB  |  Dynamics 1.5 dB  |  Correlation 0.92
+
+1. [SATURATION - TIP] Hard clipping below 0 dBFS (1 events)
+   Flat-topped peaks at -0.5 dBFS: a clipper or saturator is clipping. Fine if intentional, but keep it to 1-2 dB of clipping on transients.
+   1) Lower the input of the clipper/saturator until it only shaves the loudest transients
+   2) Compare bypassed vs active at the same loudness: if the transients sound duller, back off
+
+
+##### ICARO_-_Oxygen
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 94/100
+Analyzed 32.0 s
+Integrated loudness -9.3 LUFS  |  Peak -0.1 dBFS  |  Crest 9.3 dB  |  Dynamics 1.6 dB  |  Correlation 0.96
+
+1. [EQ - TIP] Thin, lacks warmth around 200 Hz
+   The master is about 3.1 dB quieter than a reference balance in this range (200 Hz - 250 Hz).
+   1) Channel EQ: use a Peak (bell) band at 200 Hz, Gain +2.0 dB, Q 1.4
+   2) Less is more: if a small boost isn't enough, fix it at the source (sample/preset) instead of pushing the EQ
+
+2. [SATURATION - TIP] Hard clipping below 0 dBFS (2 events)
+   Flat-topped peaks at -0.1 dBFS: a clipper or saturator is clipping. Fine if intentional, but keep it to 1-2 dB of clipping on transients.
+   1) Lower the input of the clipper/saturator until it only shaves the loudest transients
+   2) Compare bypassed vs active at the same loudness: if the transients sound duller, back off
+
+
+##### HOT_N_COLD_Vs_LETS_TRY_IT_ATCG_Mash_Up
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 97/100
+Analyzed 32.0 s
+Integrated loudness -4.6 LUFS  |  Peak 0.8 dBFS  |  Crest 7.1 dB  |  Dynamics 1.5 dB  |  Correlation 0.85
+
+1. [LOUDNESS - TIP] Overs above 0 dBFS
+   Peaks reach 0.8 dBFS. Club files usually sit at -0.3 to 0 dBFS; anything above can clip in the DJ's player or after conversion.
+   1) Last slot: Adaptive Limiter (or Limiter) with Out Ceiling -0.5 dB, Gain 0.0 dB; check with Loudness Meter
+   2) For the streaming version use a -1 dBTP ceiling instead
+
+
+##### Kolter__Riton_-_Rinse__Repeat_again_Extended_Mix_Koltrax
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 85/100
+Analyzed 32.0 s
+Integrated loudness -8.2 LUFS  |  Peak -0.1 dBFS  |  Crest 9.6 dB  |  Dynamics 1.3 dB  |  Correlation 0.93
+
+1. [EQ - CRITICAL] Missing sub around 40 Hz
+   The master is about 11.1 dB quieter than a reference balance in this range (40 Hz - 50 Hz).
+   1) Channel EQ: use a Peak (bell) band at 40 Hz, Gain +5.0 dB, Q 1.4
+   2) Less is more: if a small boost isn't enough, fix it at the source (sample/preset) instead of pushing the EQ
+
+
+##### Rosa_Linn_-_Snap_ATCG_Remix_MSTR
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 97/100
+Analyzed 32.0 s
+Integrated loudness -5.9 LUFS  |  Peak 0.6 dBFS  |  Crest 8.5 dB  |  Dynamics 2.4 dB  |  Correlation 0.68
+
+1. [LOUDNESS - TIP] Overs above 0 dBFS
+   Peaks reach 0.6 dBFS. Club files usually sit at -0.3 to 0 dBFS; anything above can clip in the DJ's player or after conversion.
+   1) Last slot: Adaptive Limiter (or Limiter) with Out Ceiling -0.5 dB, Gain 0.0 dB; check with Loudness Meter
+   2) For the streaming version use a -1 dBTP ceiling instead
+
+
+##### Pitbull_-_I_Know_You_Want_Me_ATCG_Afro_Retouch
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 82/100
+Analyzed 32.0 s
+Integrated loudness -8.9 LUFS  |  Peak 0.1 dBFS  |  Crest 9.1 dB  |  Dynamics 2.1 dB  |  Correlation 0.85
+
+1. [EQ - CRITICAL] Too much sub around 40 Hz
+   The master is about 9.4 dB louder than a reference balance in this range (40 Hz - 50 Hz).
+   1) Channel EQ: Low Shelf at 60 Hz, Gain -6.5 dB
+   2) Before cutting, boost the band +6 dB and sweep slowly around 40 Hz: where it sounds worst is where the cut goes
+
+2. [LOUDNESS - TIP] Overs above 0 dBFS
+   Peaks reach 0.1 dBFS. Club files usually sit at -0.3 to 0 dBFS; anything above can clip in the DJ's player or after conversion.
+   1) Last slot: Adaptive Limiter (or Limiter) with Out Ceiling -0.5 dB, Gain 0.0 dB; check with Loudness Meter
+   2) For the streaming version use a -1 dBTP ceiling instead
+
+
+##### Swedish_House_Mafia_-_Leave_The_World_Behind__SENATVS_x_Teddy-O_Remix_
+MIX-X by Tune Talks - report
+Track: Master / Mix   DAW: Logic Pro   Score: 97/100
+Analyzed 32.0 s
+Integrated loudness -7.1 LUFS  |  Peak -0.2 dBFS  |  Crest 8.1 dB  |  Dynamics 2.1 dB  |  Correlation 0.86
+
+1. [SATURATION - TIP] Hard clipping below 0 dBFS (3 events)
+   Flat-topped peaks at -0.2 dBFS: a clipper or saturator is clipping. Fine if intentional, but keep it to 1-2 dB of clipping on transients.
+   1) Lower the input of the clipper/saturator until it only shaves the loudest transients
+   2) Compare bypassed vs active at the same loudness: if the transients sound duller, back off
+
