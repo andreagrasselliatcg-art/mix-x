@@ -1,0 +1,86 @@
+name: Build macOS (AU + VST3 + PKG)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: "Build AU + VST3 (universal: Apple Silicon + Intel)"
+        run: cmake --build build --config Release --target MixX_AU MixX_VST3 -j 3
+
+      - name: Ad-hoc code signing
+        run: |
+          codesign --force --deep -s - "build/MixX_artefacts/Release/AU/Mix-X.component"
+          codesign --force --deep -s - "build/MixX_artefacts/Release/VST3/Mix-X.vst3"
+          lipo -info "build/MixX_artefacts/Release/AU/Mix-X.component/Contents/MacOS/Mix-X"
+
+      - name: Validate Audio Unit (auval)
+        run: |
+          mkdir -p ~/Library/Audio/Plug-Ins/Components
+          rm -rf ~/Library/Audio/Plug-Ins/Components/"Mix-X.component"
+          cp -R "build/MixX_artefacts/Release/AU/Mix-X.component" ~/Library/Audio/Plug-Ins/Components/
+          killall -9 AudioComponentRegistrar || true
+          sleep 3
+          auval -v aufx MixX Tntk
+
+      - name: Build installer .pkg
+        run: |
+          VERSION="1.0.${GITHUB_RUN_NUMBER}"
+          mkdir -p pkgroot/Components pkgroot/VST3 pkgscripts
+          cp -R "build/MixX_artefacts/Release/AU/Mix-X.component" pkgroot/Components/
+          cp -R "build/MixX_artefacts/Release/VST3/Mix-X.vst3" pkgroot/VST3/
+          printf '#!/bin/bash\nkillall -9 AudioComponentRegistrar 2>/dev/null || true\nexit 0\n' > pkgscripts/postinstall
+          chmod +x pkgscripts/postinstall
+          pkgbuild --analyze --root pkgroot components.plist
+          python3 -c "import plistlib;f='components.plist';d=plistlib.load(open(f,'rb'))
+          def fix(x):
+              for e in x:
+                  e['BundleIsRelocatable']=False; fix(e.get('ChildBundles',[]))
+          fix(d);plistlib.dump(d,open(f,'wb'))"
+          cat components.plist
+          pkgbuild --root pkgroot \
+                   --component-plist components.plist \
+                   --install-location /Library/Audio/Plug-Ins \
+                   --scripts pkgscripts \
+                   --identifier com.tunetalks.mixx.pkg \
+                   --version "$VERSION" \
+                   "MixX-${VERSION}-macOS.pkg"
+          pkgutil --payload-files "MixX-${VERSION}-macOS.pkg" | head -20
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Package zip (manual install)
+        run: |
+          mkdir -p dist
+          cp -R "build/MixX_artefacts/Release/AU/Mix-X.component" dist/
+          cp -R "build/MixX_artefacts/Release/VST3/Mix-X.vst3" dist/
+          cp install_mac.command dist/
+          cd dist && zip -r -y "../MixX-${VERSION}-macOS.zip" .
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MixX-macOS
+          path: |
+            MixX-*-macOS.pkg
+            MixX-*-macOS.zip
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "v${VERSION}" \
+            "MixX-${VERSION}-macOS.pkg" \
+            "MixX-${VERSION}-macOS.zip" \
+            --title "Mix-X ${VERSION}" \
+            --notes "Mix-X by Tune Talks - macOS installer (Apple Silicon + Intel). Right-click > Open on the .pkg. Logic: Audio FX > Audio Units > Tune Talks > Mix-X. Ableton: Plug-ins > Tune Talks > Mix-X."
